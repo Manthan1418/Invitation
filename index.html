@@ -114,8 +114,8 @@
                 <!-- Circular Photo Frame with soft float -->
                 <div
                     class="w-40 h-40 mx-auto rounded-full bg-slate-100 mb-6 relative p-1 shadow-inner group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1544126592-807ade215a0b?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
-                        alt="Baby"
+                    <img src="assets/hero_image.JPG"
+                        alt="Baby Bhavik"
                         class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 ease-out">
 
                     <div
@@ -207,64 +207,60 @@
                 </div>
             </div>
 
-            <!-- Family Photo Gallery -->
+            <!-- Family Photo Montage -->
             <div class="mb-8 stagger-item" style="transition-delay: 150ms;">
                 <div class="flex items-center justify-between mb-4 px-2">
-                    <h2 class="text-lg font-medium text-slate-800 tracking-tight">Our Little Family</h2>
-                    <iconify-icon icon="lucide:heart" width="16" class="text-red-400"></iconify-icon>
+                    <h2 class="text-lg font-medium text-slate-800 tracking-tight">Our Little Star</h2>
+                    <div class="flex items-center gap-2">
+                        <iconify-icon icon="lucide:images" width="16" class="text-blue-400"></iconify-icon>
+                        <iconify-icon icon="lucide:heart" width="16" class="text-red-400"></iconify-icon>
+                    </div>
                 </div>
 
                 <div class="glass-card rounded-[2rem] p-4 animate-breathe">
-                    <!-- Parents Photo -->
-                    <div class="mb-4">
-                        <div class="relative h-40 w-full rounded-2xl overflow-hidden group cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" 
-                                alt="Mom"
-                                class="absolute left-0 top-0 w-1/2 h-full object-cover border-r-2 border-white">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
-                                alt="Dad"
-                                class="absolute right-0 top-0 w-1/2 h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                            <div class="absolute bottom-3 left-0 right-0 text-center">
-                                <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-slate-700">
-                                    <iconify-icon icon="lucide:heart" width="12" class="text-red-400 inline mr-1"></iconify-icon>
-                                    Mom & Dad
-                                </span>
-                            </div>
+                    <!-- Image Montage Slideshow -->
+                    <div id="montage-container" class="relative w-full rounded-2xl overflow-hidden cursor-pointer" style="height: 350px; background-color: #f1f5f9;">
+                        <!-- Images with Static Captions -->
+                        <div class="montage-slide active">
+                            <img src="assets/mom&dad.jpeg" alt="Mom & Dad" class="montage-img">
+                            <div class="montage-label">Mom & Dad</div>
                         </div>
-                    </div>
-
-                    <!-- Baby Photos Grid -->
-                    <div class="grid grid-cols-3 gap-2">
-                        <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=400&auto=format&fit=crop" 
-                                alt="Baby Oliver"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="montage-slide">
+                            <img src="assets/image1.jpeg" alt="Tiny Smiles" class="montage-img">
+                            <div class="montage-label">Tiny Smiles</div>
                         </div>
-                        <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=400&auto=format&fit=crop" 
-                                alt="Baby Oliver"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="montage-slide">
+                            <img src="assets/image2.JPG" alt="Bundle of Joy" class="montage-img">
+                            <div class="montage-label">Bundle of Joy</div>
                         </div>
-                        <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=400&auto=format&fit=crop" 
-                                alt="Baby Oliver"
-                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="montage-slide">
+                            <img src="assets/image3.jpeg" alt="Precious Moments" class="montage-img">
+                            <div class="montage-label">Precious Moments</div>
                         </div>
-                    </div>
-
-                    <!-- Family Together -->
-                    <div class="mt-4">
-                        <div class="relative h-32 w-full rounded-2xl overflow-hidden group cursor-pointer">
-                            <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=800&auto=format&fit=crop" 
-                                alt="Family Together"
-                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-                                <span class="text-white text-xs font-medium">Our Growing Family</span>
-                                <iconify-icon icon="lucide:sparkles" width="14" class="text-yellow-300"></iconify-icon>
-                            </div>
+                        <div class="montage-slide">
+                            <img src="assets/image4.jpeg" alt="Little Angel" class="montage-img">
+                            <div class="montage-label">Little Angel</div>
                         </div>
+                        
+                        <!-- Gradient Overlay -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
+                        
+                        <!-- Progress Indicators -->
+                        <div class="absolute top-4 left-4 right-4 flex gap-1">
+                            <div class="montage-indicator active" data-index="0"></div>
+                            <div class="montage-indicator" data-index="1"></div>
+                            <div class="montage-indicator" data-index="2"></div>
+                            <div class="montage-indicator" data-index="3"></div>
+                            <div class="montage-indicator" data-index="4"></div>
+                        </div>
+                        
+                        <!-- Navigation Arrows -->
+                        <button onclick="prevSlide(event)" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:scale-110 transition-all opacity-0 group-hover:opacity-100 montage-nav">
+                            <iconify-icon icon="lucide:chevron-left" width="18"></iconify-icon>
+                        </button>
+                        <button onclick="nextSlide(event)" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:scale-110 transition-all opacity-0 group-hover:opacity-100 montage-nav">
+                            <iconify-icon icon="lucide:chevron-right" width="18"></iconify-icon>
+                        </button>
                     </div>
                 </div>
             </div>
