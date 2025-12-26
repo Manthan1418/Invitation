@@ -175,16 +175,18 @@
                         <div
                             class="absolute inset-0 flex items-center justify-center opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover bg-center">
                         </div>
-                        <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="absolute inset-0 flex items-center justify-center flex-col gap-2">
                             <div class="bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 group-hover:bg-blue-50 group-hover:scale-105 transition-all">
                                 <iconify-icon icon="lucide:map-pin" class="text-blue-500 group-hover:animate-bounce" width="16"></iconify-icon>
-                                <span class="text-xs font-medium text-slate-700">The Garden House</span>
+                                <span class="text-xs font-medium text-slate-700">The Malhi Farm</span>
                                 <iconify-icon icon="lucide:external-link" class="text-slate-400" width="12"></iconify-icon>
                             </div>
+                            <span class="text-[10px] text-blue-500 font-medium flex items-center gap-1">
+                                <iconify-icon icon="lucide:hand-pointer" width="10"></iconify-icon>
+                                Tap to open in Maps
+                            </span>
                         </div>
-                        <div class="absolute bottom-2 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <span class="text-[10px] text-blue-500 font-medium">Tap to open in Google Maps</span>
-                        </div>
+                        
                     </a>
 
                     <!-- Details Grid -->
@@ -193,12 +195,12 @@
                             <iconify-icon icon="lucide:calendar-clock" class="text-blue-500 mb-2"
                                 width="20"></iconify-icon>
                             <p class="text-sm font-medium text-slate-800">Wednesday</p>
-                            <p class="text-xs font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">8:00 PM IST</p>
+                            <p class="text-xs font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">8:00 PM</p>
                         </div>
                         <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 text-center border border-purple-100">
                             <iconify-icon icon="lucide:party-popper" class="text-purple-500 mb-2"
                                 width="20"></iconify-icon>
-                            <p class="text-sm font-medium text-slate-800">Casual</p>
+                            <p class="text-sm font-medium text-slate-800">Indian</p>
                             <p class="text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Dress Code ✨</p>
                         </div>
                     </div>
@@ -281,7 +283,6 @@
 
                     <iconify-icon icon="lucide:party-popper" width="32" class="text-yellow-400 mb-3 animate-bounce"></iconify-icon>
                     <h3 class="text-xl font-medium mb-1">Are you coming?</h3>
-                    <p class="text-slate-400 text-sm mb-6">Let us know by Jan 1st, 2026</p>
 
                     <!-- Swipe/Toggle Interaction -->
                     <div class="relative bg-slate-800 h-14 rounded-full p-1 flex items-center cursor-pointer group select-none overflow-hidden"
