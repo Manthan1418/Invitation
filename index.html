@@ -69,8 +69,9 @@
             class="relative z-10 h-full overflow-y-auto no-scrollbar pt-8 pb-24 px-6 opacity-0 transition-opacity duration-500">
 
             <!-- Hero Card -->
+            <!-- Hero Card -->
             <div
-                class="glass-card rounded-[2rem] p-8 mb-6 stagger-item transform transition-all hover:scale-[1.01] duration-500 text-center relative overflow-hidden">
+                class="glass-card rounded-[2rem] p-8 mb-6 stagger-item animate-breathe text-center relative overflow-hidden">
                 <!-- Decorative Arc -->
                 <div
                     class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent">
@@ -115,7 +116,7 @@
                     <span class="text-xs text-slate-400">Nov 18, 2023</span>
                 </div>
 
-                <div class="bg-white rounded-[1.5rem] p-1 shadow-sm border border-slate-100">
+                <div class="bg-white rounded-[1.5rem] p-1 shadow-sm border border-slate-100 animate-breathe">
                     <!-- Location Map Placeholder -->
                     <div class="h-32 w-full bg-slate-50 rounded-2xl mb-4 overflow-hidden relative">
                         <div
@@ -147,8 +148,71 @@
                 </div>
             </div>
 
+            <!-- Family Photo Gallery -->
+            <div class="mb-8 stagger-item" style="transition-delay: 150ms;">
+                <div class="flex items-center justify-between mb-4 px-2">
+                    <h2 class="text-lg font-medium text-slate-800 tracking-tight">Our Little Family</h2>
+                    <iconify-icon icon="lucide:heart" width="16" class="text-red-400"></iconify-icon>
+                </div>
+
+                <div class="glass-card rounded-[2rem] p-4 animate-breathe">
+                    <!-- Parents Photo -->
+                    <div class="mb-4">
+                        <div class="relative h-40 w-full rounded-2xl overflow-hidden group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=800&auto=format&fit=crop" 
+                                alt="Mom"
+                                class="absolute left-0 top-0 w-1/2 h-full object-cover border-r-2 border-white">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
+                                alt="Dad"
+                                class="absolute right-0 top-0 w-1/2 h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                            <div class="absolute bottom-3 left-0 right-0 text-center">
+                                <span class="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-slate-700">
+                                    <iconify-icon icon="lucide:heart" width="12" class="text-red-400 inline mr-1"></iconify-icon>
+                                    Mom & Dad
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Baby Photos Grid -->
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=400&auto=format&fit=crop" 
+                                alt="Baby Oliver"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?q=80&w=400&auto=format&fit=crop" 
+                                alt="Baby Oliver"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="aspect-square rounded-xl overflow-hidden group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=400&auto=format&fit=crop" 
+                                alt="Baby Oliver"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        </div>
+                    </div>
+
+                    <!-- Family Together -->
+                    <div class="mt-4">
+                        <div class="relative h-32 w-full rounded-2xl overflow-hidden group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1609220136736-443140cffec6?q=80&w=800&auto=format&fit=crop" 
+                                alt="Family Together"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+                                <span class="text-white text-xs font-medium">Our Growing Family</span>
+                                <iconify-icon icon="lucide:sparkles" width="14" class="text-yellow-300"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Family Special Section -->
-            <div class="glass-card rounded-[2rem] p-6 mb-8 stagger-item" style="transition-delay: 200ms;">
+            <div class="glass-card rounded-[2rem] p-6 mb-8 stagger-item animate-breathe"
+                style="transition-delay: 250ms;">
                 <div class="flex items-start gap-4">
                     <div
                         class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
@@ -181,7 +245,7 @@
             <!-- RSVP Slider Action -->
             <div class="stagger-item" style="transition-delay: 300ms;">
                 <div
-                    class="bg-slate-900 rounded-3xl p-6 text-white text-center shadow-xl shadow-slate-300/50 relative overflow-hidden">
+                    class="bg-slate-900 rounded-3xl p-6 text-white text-center shadow-xl shadow-slate-300/50 relative overflow-hidden animate-breathe">
                     <div
                         class="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20">
                     </div>
@@ -190,17 +254,20 @@
                     <p class="text-slate-400 text-sm mb-6">Let us know by Nov 10th</p>
 
                     <!-- Swipe/Toggle Interaction -->
-                    <div class="relative bg-slate-800 h-14 rounded-full p-1 flex items-center cursor-pointer group select-none"
+                    <div class="relative bg-slate-800 h-14 rounded-full p-1 flex items-center cursor-pointer group select-none overflow-hidden"
                         onclick="toggleRsvp(this)">
+                        <div id="rsvp-fill"
+                            class="absolute inset-0 bg-green-500 origin-left transform scale-x-0 transition-transform duration-500 ease-out">
+                        </div>
                         <div id="rsvp-btn"
-                            class="absolute left-1 w-12 h-12 bg-blue-500 rounded-full shadow-lg flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                            class="absolute left-1 w-12 h-12 bg-blue-500 rounded-full shadow-lg flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-10">
                             <iconify-icon icon="lucide:check" width="20" class="text-white opacity-0 transition-opacity"
                                 id="rsvp-check"></iconify-icon>
                             <iconify-icon icon="lucide:chevron-right" width="20"
                                 class="text-white opacity-100 transition-opacity" id="rsvp-arrow"></iconify-icon>
                         </div>
                         <span id="rsvp-text"
-                            class="w-full text-center text-sm font-medium text-slate-300 ml-8 transition-opacity duration-300">Tap
+                            class="relative z-10 w-full text-center text-sm font-medium text-slate-300 ml-8 transition-opacity duration-300">Tap
                             to confirm</span>
                     </div>
                 </div>

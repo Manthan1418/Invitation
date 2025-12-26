@@ -59,26 +59,35 @@ function toggleRsvp(element) {
     const arrow = document.getElementById('rsvp-arrow');
     const check = document.getElementById('rsvp-check');
 
-    // Move button to right
-    btn.style.transform = 'translateX(calc(100% + 200px))'; // Move far right logic simplified for css calc
-    // Actually, let's just use flex logic or specific pixels. 
-    // Since tailwind w-full is used, let's calc based on parent width approx 
-    // Better approach: toggle classes
-    btn.style.left = 'auto';
-    btn.style.right = '4px';
+    // Calculate distance to move: container width - button width - padding (left-1 + right-1 = 8px)
+    const containerWidth = element.offsetWidth;
+    const btnWidth = btn.offsetWidth;
+    const travelDistance = containerWidth - btnWidth - 8;
+
+    // Animate Button
+    btn.style.transform = `translateX(${travelDistance}px)`;
     btn.style.backgroundColor = '#22c55e'; // Green
 
+    // Animate Fill
+    const fill = document.getElementById('rsvp-fill');
+    fill.style.transform = 'scaleX(1)';
+
+
+    // Icon Swap Animation
     arrow.style.opacity = '0';
     setTimeout(() => {
         check.style.opacity = '1';
     }, 200);
 
+    // Text Transition
     text.style.opacity = '0';
     setTimeout(() => {
         text.innerText = "Yay! You're confirmed.";
         text.style.color = "#ffffff";
         text.style.marginLeft = "0";
-        text.style.marginRight = "48px"; // space for button
+        // Adjust margin to center text in the remaining space if needed, 
+        // or just let it center naturally in the full width minus button
+        text.style.marginRight = "48px";
         text.style.opacity = '1';
     }, 300);
 }
