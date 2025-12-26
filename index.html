@@ -102,7 +102,7 @@
                     Invitation</span>
 
                 <h1 class="text-[2.5rem] leading-[1.1] font-medium text-slate-900 tracking-tight mb-2">
-                    Oliver<br><span class="text-slate-400">James</span>
+                    Bhavik<br><span class="text-slate-400">Ahuja</span>
                 </h1>
 
                 <div class="flex items-center justify-center gap-2 mb-6">
@@ -130,26 +130,30 @@
                 
                 <!-- Countdown Timer -->
                 <div class="mt-6 pt-6 border-t border-slate-100">
-                    <p class="text-xs text-slate-400 uppercase tracking-widest mb-3">Countdown to the Big Day</p>
+                    <p class="text-xs font-semibold uppercase tracking-widest mb-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent flex items-center justify-center gap-2">
+                        <iconify-icon icon="lucide:clock" width="12" class="text-purple-400"></iconify-icon>
+                        Countdown to the Big Day
+                        <iconify-icon icon="lucide:sparkles" width="12" class="text-pink-400"></iconify-icon>
+                    </p>
                     <div id="countdown" class="flex justify-center gap-3">
                         <div class="countdown-item">
                             <span id="days" class="text-2xl font-bold text-blue-600">00</span>
-                            <span class="text-[10px] text-slate-400 uppercase">Days</span>
+                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Days</span>
                         </div>
                         <span class="text-2xl text-slate-300">:</span>
                         <div class="countdown-item">
                             <span id="hours" class="text-2xl font-bold text-indigo-600">00</span>
-                            <span class="text-[10px] text-slate-400 uppercase">Hours</span>
+                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">Hours</span>
                         </div>
                         <span class="text-2xl text-slate-300">:</span>
                         <div class="countdown-item">
                             <span id="minutes" class="text-2xl font-bold text-purple-600">00</span>
-                            <span class="text-[10px] text-slate-400 uppercase">Mins</span>
+                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Mins</span>
                         </div>
                         <span class="text-2xl text-slate-300">:</span>
                         <div class="countdown-item">
                             <span id="seconds" class="text-2xl font-bold text-pink-600 animate-pulse">00</span>
-                            <span class="text-[10px] text-slate-400 uppercase">Secs</span>
+                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Secs</span>
                         </div>
                     </div>
                 </div>
@@ -159,36 +163,43 @@
             <div class="mb-8 stagger-item" style="transition-delay: 100ms;">
                 <div class="flex items-center justify-between mb-4 px-2">
                     <h2 class="text-lg font-medium text-slate-800 tracking-tight">The Big Day</h2>
-                    <span class="text-xs text-slate-400">Nov 18, 2023</span>
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex items-center gap-1 shadow-sm">
+                        <iconify-icon icon="lucide:calendar" width="10"></iconify-icon>
+                        Jan 7, 2026
+                    </span>
                 </div>
 
                 <div class="bg-white rounded-[1.5rem] p-1 shadow-sm border border-slate-100 animate-breathe">
                     <!-- Location Map Placeholder -->
-                    <div class="h-32 w-full bg-slate-50 rounded-2xl mb-4 overflow-hidden relative">
+                    <a href="https://maps.app.goo.gl/WirjHk8rjJc4NwQw9" target="_blank" rel="noopener noreferrer" class="block h-32 w-full bg-slate-50 rounded-2xl mb-4 overflow-hidden relative group cursor-pointer hover:shadow-md transition-shadow">
                         <div
                             class="absolute inset-0 flex items-center justify-center opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover bg-center">
                         </div>
                         <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2">
-                                <iconify-icon icon="lucide:map-pin" class="text-blue-500" width="16"></iconify-icon>
+                            <div class="bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 group-hover:bg-blue-50 group-hover:scale-105 transition-all">
+                                <iconify-icon icon="lucide:map-pin" class="text-blue-500 group-hover:animate-bounce" width="16"></iconify-icon>
                                 <span class="text-xs font-medium text-slate-700">The Garden House</span>
+                                <iconify-icon icon="lucide:external-link" class="text-slate-400" width="12"></iconify-icon>
                             </div>
                         </div>
-                    </div>
+                        <div class="absolute bottom-2 left-0 right-0 text-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="text-[10px] text-blue-500 font-medium">Tap to open in Google Maps</span>
+                        </div>
+                    </a>
 
                     <!-- Details Grid -->
                     <div class="grid grid-cols-2 gap-1">
-                        <div class="bg-slate-50 rounded-xl p-4 text-center">
-                            <iconify-icon icon="lucide:calendar-clock" class="text-slate-400 mb-2"
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 text-center border border-blue-100">
+                            <iconify-icon icon="lucide:calendar-clock" class="text-blue-500 mb-2"
                                 width="20"></iconify-icon>
-                            <p class="text-sm font-medium text-slate-800">Saturday</p>
-                            <p class="text-xs text-slate-400">2:00 PM</p>
+                            <p class="text-sm font-medium text-slate-800">Wednesday</p>
+                            <p class="text-xs font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">8:00 PM IST</p>
                         </div>
-                        <div class="bg-slate-50 rounded-xl p-4 text-center">
-                            <iconify-icon icon="lucide:party-popper" class="text-slate-400 mb-2"
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 text-center border border-purple-100">
+                            <iconify-icon icon="lucide:party-popper" class="text-purple-500 mb-2"
                                 width="20"></iconify-icon>
                             <p class="text-sm font-medium text-slate-800">Casual</p>
-                            <p class="text-xs text-slate-400">Dress Code</p>
+                            <p class="text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Dress Code ✨</p>
                         </div>
                     </div>
                 </div>
@@ -256,38 +267,6 @@
                 </div>
             </div>
 
-            <!-- Family Special Section -->
-            <div class="glass-card rounded-[2rem] p-6 mb-8 stagger-item animate-breathe"
-                style="transition-delay: 250ms;">
-                <div class="flex items-start gap-4">
-                    <div
-                        class="w-10 h-10 rounded-full bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
-                        <iconify-icon icon="lucide:quote" width="18"></iconify-icon>
-                    </div>
-                    <div>
-                        <h3 class="text-base font-medium text-slate-800 mb-1">Family Traditions</h3>
-                        <p class="text-sm text-slate-500 leading-relaxed mb-4">
-                            We're starting a time capsule for Oliver. Please bring a small note, photo, or wish to seal
-                            away for his 18th birthday.
-                        </p>
-                        <div class="flex -space-x-2 overflow-hidden">
-                            <div
-                                class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-slate-200 flex items-center justify-center text-xs text-slate-500">
-                                GM</div>
-                            <div
-                                class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-blue-200 flex items-center justify-center text-xs text-blue-600">
-                                Dad</div>
-                            <div
-                                class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-pink-200 flex items-center justify-center text-xs text-pink-600">
-                                Mom</div>
-                            <div
-                                class="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-slate-50 flex items-center justify-center text-[10px] text-slate-400 font-medium">
-                                +12</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <!-- RSVP Slider Action -->
             <div class="stagger-item" style="transition-delay: 300ms;">
                 <div id="rsvp-card"
@@ -302,7 +281,7 @@
 
                     <iconify-icon icon="lucide:party-popper" width="32" class="text-yellow-400 mb-3 animate-bounce"></iconify-icon>
                     <h3 class="text-xl font-medium mb-1">Are you coming?</h3>
-                    <p class="text-slate-400 text-sm mb-6">Let us know by Nov 10th</p>
+                    <p class="text-slate-400 text-sm mb-6">Let us know by Jan 1st, 2026</p>
 
                     <!-- Swipe/Toggle Interaction -->
                     <div class="relative bg-slate-800 h-14 rounded-full p-1 flex items-center cursor-pointer group select-none overflow-hidden"
@@ -332,8 +311,10 @@
                     <iconify-icon icon="lucide:heart" width="16" class="text-red-400 animate-heartbeat" style="animation-delay: 0.4s"></iconify-icon>
                 </div>
                 <iconify-icon icon="lucide:infinity" width="24" class="text-slate-300 mb-2 animate-spin-slow"></iconify-icon>
-                <p class="text-xs text-slate-400 font-medium tracking-wider uppercase">With love, The Smiths</p>
-                <p class="text-[10px] text-slate-300 mt-2">Made with 💕 for Oliver</p>
+                <p class="text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">With love, The Ahujas</p>
+                <p class="text-[10px] text-slate-400 mt-2 flex items-center justify-center gap-1">
+                    Made with <iconify-icon icon="lucide:heart" width="10" class="text-red-400 animate-heartbeat"></iconify-icon> for Bhavik
+                </p>
             </div>
             
             <!-- Scroll to Top Button -->

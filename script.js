@@ -77,12 +77,22 @@ function initFloatingElements() {
 
 // ============ COUNTDOWN TIMER ============
 function initCountdown() {
-    // Set target date (modify as needed)
-    const targetDate = new Date('2024-11-18T14:00:00').getTime();
+    // Event date: January 7, 2026 at 8:00 PM IST (India Standard Time - UTC+5:30)
+    // Using ISO format with timezone offset for IST
+    const eventDateIST = '2026-01-07T20:00:00+05:30';
+    const targetDate = new Date(eventDateIST).getTime();
     
     function updateCountdown() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+        // Get current time in IST (India/Delhi timezone)
+        const now = new Date();
+        const nowIST = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+        const nowTimestamp = nowIST.getTime();
+        
+        // Calculate target in IST
+        const targetIST = new Date(new Date(eventDateIST).toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+        const targetTimestamp = targetIST.getTime();
+        
+        const distance = targetTimestamp - nowTimestamp;
         
         if (distance > 0) {
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -95,7 +105,12 @@ function initCountdown() {
             document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
             document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
         } else {
-            document.getElementById('countdown').innerHTML = '<span class="text-xl font-bold text-green-500">🎉 Today is the Day! 🎉</span>';
+            document.getElementById('countdown').innerHTML = `
+                <div class="text-center">
+                    <span class="text-2xl font-bold text-green-500 animate-pulse">🎉 Today is the Day! 🎉</span>
+                    <p class="text-sm text-slate-500 mt-2">The celebration starts at 8:00 PM IST</p>
+                </div>
+            `;
         }
     }
     
