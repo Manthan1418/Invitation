@@ -1,13 +1,167 @@
+// ============ INITIALIZATION ============
+document.addEventListener('DOMContentLoaded', () => {
+    initTypewriter();
+    initStars();
+    initFloatingElements();
+    initCountdown();
+    initScrollListener();
+});
+
+// ============ TYPEWRITER EFFECT ============
+function initTypewriter() {
+    const text = "YOU HAVE A SPECIAL INVITATION ✨";
+    const element = document.getElementById('typewriter');
+    let index = 0;
+    
+    function type() {
+        if (index < text.length) {
+            element.innerHTML = text.substring(0, index + 1) + '<span class="typewriter-cursor"></span>';
+            index++;
+            setTimeout(type, 100);
+        } else {
+            // Reset after a pause
+            setTimeout(() => {
+                index = 0;
+                type();
+            }, 3000);
+        }
+    }
+    type();
+}
+
+// ============ STARS BACKGROUND ============
+function initStars() {
+    const container = document.getElementById('stars-container');
+    const starIcons = ['✦', '✧', '★', '☆', '✴', '✵'];
+    const colors = ['#60A5FA', '#F472B6', '#FBBF24', '#A78BFA', '#34D399'];
+    
+    for (let i = 0; i < 20; i++) {
+        const star = document.createElement('span');
+        star.className = 'star animate-twinkle';
+        star.textContent = starIcons[Math.floor(Math.random() * starIcons.length)];
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.fontSize = (Math.random() * 10 + 8) + 'px';
+        star.style.color = colors[Math.floor(Math.random() * colors.length)];
+        star.style.animationDelay = Math.random() * 2 + 's';
+        star.style.animationDuration = (Math.random() * 2 + 1) + 's';
+        container.appendChild(star);
+    }
+}
+
+// ============ FLOATING ELEMENTS ============
+function initFloatingElements() {
+    const container = document.getElementById('floating-elements');
+    const elements = ['💕', '✨', '🎀', '⭐', '💫', '🌸', '🎈', '💝', '🦋', '🌟', '💖', '🎉', '🍼', '👶', '🧸'];
+    
+    setInterval(() => {
+        if (document.getElementById('intro-layer').style.opacity === '0') {
+            // Create multiple elements at once
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('span');
+                    el.className = 'floating-element';
+                    el.textContent = elements[Math.floor(Math.random() * elements.length)];
+                    el.style.left = Math.random() * 100 + '%';
+                    el.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    el.style.animationDuration = (Math.random() * 8 + 8) + 's';
+                    container.appendChild(el);
+                    
+                    // Remove after animation
+                    setTimeout(() => el.remove(), 16000);
+                }, i * 200);
+            }
+        }
+    }, 800);
+}
+
+// ============ COUNTDOWN TIMER ============
+function initCountdown() {
+    // Set target date (modify as needed)
+    const targetDate = new Date('2024-11-18T14:00:00').getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        
+        if (distance > 0) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        } else {
+            document.getElementById('countdown').innerHTML = '<span class="text-xl font-bold text-green-500">🎉 Today is the Day! 🎉</span>';
+        }
+    }
+    
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+// ============ SCROLL LISTENER ============
+function initScrollListener() {
+    const mainContent = document.getElementById('main-content');
+    const scrollBtn = document.getElementById('scroll-top');
+    
+    mainContent.addEventListener('scroll', () => {
+        if (mainContent.scrollTop > 300) {
+            scrollBtn.style.opacity = '1';
+            scrollBtn.style.pointerEvents = 'auto';
+        } else {
+            scrollBtn.style.opacity = '0';
+            scrollBtn.style.pointerEvents = 'none';
+        }
+    });
+}
+
+function scrollToTop() {
+    document.getElementById('main-content').scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// ============ MUSIC CONTROL ============
+let musicPlaying = false;
+function toggleMusic() {
+    const audio = document.getElementById('bg-music');
+    const icon = document.getElementById('music-icon');
+    
+    if (musicPlaying) {
+        audio.pause();
+        icon.setAttribute('icon', 'lucide:volume-x');
+    } else {
+        audio.volume = 0.3;
+        audio.play().catch(e => console.log('Audio play failed:', e));
+        icon.setAttribute('icon', 'lucide:volume-2');
+    }
+    musicPlaying = !musicPlaying;
+}
+
+// ============ OPEN INVITATION ============
 function openInvitation() {
     const introLayer = document.getElementById('intro-layer');
     const mainContent = document.getElementById('main-content');
     const container = document.getElementById('particle-container');
 
+    // Start music automatically
+    const audio = document.getElementById('bg-music');
+    audio.volume = 0.3;
+    audio.play().catch(e => console.log('Audio autoplay blocked:', e));
+    document.getElementById('music-icon').setAttribute('icon', 'lucide:volume-2');
+    musicPlaying = true;
+
     // 1. Trigger Confetti
     createParticles(container);
+    createBurstConfetti();
 
-    // 2. Animate Intro Out
-    introLayer.style.transform = 'translateY(-100%) scale(0.9)';
+    // 2. Animate Intro Out with 3D effect
+    introLayer.style.transform = 'translateY(-100%) rotateX(30deg) scale(0.8)';
     introLayer.style.opacity = '0';
     introLayer.style.pointerEvents = 'none';
 
@@ -25,30 +179,63 @@ function openInvitation() {
     }, 300);
 }
 
-// Particle System for "Pop" effect
+// ============ PARTICLE SYSTEM ============
 function createParticles(container) {
-    const colors = ['#60A5FA', '#93C5FD', '#F472B6', '#FCD34D'];
-    for (let i = 0; i < 20; i++) {
+    const colors = ['#60A5FA', '#93C5FD', '#F472B6', '#FCD34D', '#A78BFA', '#34D399'];
+    for (let i = 0; i < 30; i++) {
         const p = document.createElement('div');
         p.classList.add('particle');
         p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-        p.style.width = Math.random() * 6 + 4 + 'px';
+        p.style.width = Math.random() * 8 + 4 + 'px';
         p.style.height = p.style.width;
         p.style.left = '50%';
         p.style.top = '50%';
 
         // Random destination
-        const tx = (Math.random() - 0.5) * 200 + 'px';
-        const ty = (Math.random() - 0.5) * 200 + 'px';
+        const tx = (Math.random() - 0.5) * 300 + 'px';
+        const ty = (Math.random() - 0.5) * 300 + 'px';
         p.style.setProperty('--tx', tx);
         p.style.setProperty('--ty', ty);
 
-        p.style.animation = `pop 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards`;
+        p.style.animation = `pop 1s cubic-bezier(0.16, 1, 0.3, 1) forwards`;
         container.appendChild(p);
     }
 }
 
-// RSVP Toggle Logic
+// ============ BURST CONFETTI ON OPEN ============
+function createBurstConfetti() {
+    const colors = ['#60A5FA', '#F472B6', '#FBBF24', '#A78BFA', '#34D399', '#FB7185'];
+    const shapes = ['circle', 'square', 'triangle'];
+    
+    for (let i = 0; i < 50; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti-piece';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '-10px';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            const shape = shapes[Math.floor(Math.random() * shapes.length)];
+            if (shape === 'circle') {
+                confetti.style.borderRadius = '50%';
+            } else if (shape === 'triangle') {
+                confetti.style.width = '0';
+                confetti.style.height = '0';
+                confetti.style.borderLeft = '5px solid transparent';
+                confetti.style.borderRight = '5px solid transparent';
+                confetti.style.borderBottom = '10px solid ' + colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.backgroundColor = 'transparent';
+            }
+            
+            confetti.style.animation = `confetti-fall ${Math.random() * 2 + 2}s ease-out forwards`;
+            document.body.appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 4000);
+        }, i * 30);
+    }
+}
+
+// ============ RSVP TOGGLE ============
 let isConfirmed = false;
 function toggleRsvp(element) {
     if (isConfirmed) return;
@@ -58,20 +245,23 @@ function toggleRsvp(element) {
     const text = document.getElementById('rsvp-text');
     const arrow = document.getElementById('rsvp-arrow');
     const check = document.getElementById('rsvp-check');
+    const card = document.getElementById('rsvp-card');
 
-    // Calculate distance to move: container width - button width - padding (left-1 + right-1 = 8px)
+    // Calculate distance to move
     const containerWidth = element.offsetWidth;
     const btnWidth = btn.offsetWidth;
     const travelDistance = containerWidth - btnWidth - 8;
 
     // Animate Button
     btn.style.transform = `translateX(${travelDistance}px)`;
-    btn.style.backgroundColor = '#22c55e'; // Green
+    btn.style.backgroundColor = '#22c55e';
 
     // Animate Fill
     const fill = document.getElementById('rsvp-fill');
     fill.style.transform = 'scaleX(1)';
 
+    // Create celebration confetti
+    createRsvpConfetti();
 
     // Icon Swap Animation
     arrow.style.opacity = '0';
@@ -82,12 +272,36 @@ function toggleRsvp(element) {
     // Text Transition
     text.style.opacity = '0';
     setTimeout(() => {
-        text.innerText = "Yay! You're confirmed.";
+        text.innerText = "🎉 Yay! You're confirmed!";
         text.style.color = "#ffffff";
         text.style.marginLeft = "0";
-        // Adjust margin to center text in the remaining space if needed, 
-        // or just let it center naturally in the full width minus button
         text.style.marginRight = "48px";
         text.style.opacity = '1';
     }, 300);
+    
+    // Add celebration glow
+    card.style.boxShadow = '0 0 40px rgba(34, 197, 94, 0.5)';
+}
+
+// ============ RSVP CONFETTI ============
+function createRsvpConfetti() {
+    const container = document.getElementById('rsvp-confetti');
+    const colors = ['#22c55e', '#4ade80', '#86efac', '#FBBF24', '#F472B6'];
+    const emojis = ['🎉', '🎊', '✨', '💫', '⭐'];
+    
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            const confetti = document.createElement('span');
+            confetti.textContent = Math.random() > 0.5 ? emojis[Math.floor(Math.random() * emojis.length)] : '';
+            confetti.style.position = 'absolute';
+            confetti.style.left = Math.random() * 100 + '%';
+            confetti.style.top = '50%';
+            confetti.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            confetti.style.pointerEvents = 'none';
+            confetti.style.animation = `confetti-fall ${Math.random() * 1 + 1}s ease-out forwards`;
+            container.appendChild(confetti);
+            
+            setTimeout(() => confetti.remove(), 2000);
+        }, i * 50);
+    }
 }
