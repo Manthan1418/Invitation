@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baby Bhavik - Family Celebration</title>
+    <title>You're Invited - Baby Bhavik's Celebration</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Outfit:wght@400;500;600&amp;family=Playfair+Display:ital,wght@1,500&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <!-- Background Music -->
@@ -16,23 +16,27 @@
     </audio>
 </head>
 
-<body class="bg-slate-50 text-slate-600 min-h-screen flex justify-center overflow-hidden">
+<body class="bg-amber-50 text-slate-700 min-h-screen flex justify-center overflow-hidden">
 
     <!-- Mobile App Container -->
     <main
-        class="w-full max-w-md h-[100dvh] relative overflow-hidden bg-white shadow-2xl flex flex-col perspective-container">
+        class="w-full max-w-md h-[100dvh] relative overflow-hidden bg-gradient-to-b from-amber-50 via-white to-amber-50 shadow-2xl flex flex-col perspective-container">
 
-        <!-- Animated Background Mesh -->
-        <div class="absolute inset-0 z-0">
-            <div
-                class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-100 rounded-full mix-blend-multiply filter blur-[60px] opacity-60 animate-gradient">
-            </div>
-            <div
-                class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-indigo-50 rounded-full mix-blend-multiply filter blur-[60px] opacity-60 animate-gradient">
-            </div>
-            <div
-                class="absolute top-[30%] right-[-20%] w-[40%] h-[40%] bg-blue-50 rounded-full mix-blend-multiply filter blur-[50px] opacity-40 animate-gradient">
-            </div>
+        <!-- Elegant Background Pattern -->
+        <div class="absolute inset-0 z-0 opacity-[0.03]" style="background-image: url('data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 80 80\"><path d=\"M0 0h80v80H0z\" fill=\"none\"/><path d=\"M40 0v80M0 40h80M20 0v80M60 0v80M0 20h80M0 60h80\" stroke=\"%23b45309\" stroke-width=\"0.5\"/></svg>'); background-size: 40px 40px;"></div>
+        
+        <!-- Golden Corner Decorations -->
+        <div class="absolute top-0 left-0 w-24 h-24 z-0">
+            <svg viewBox="0 0 100 100" class="w-full h-full text-amber-400 opacity-30">
+                <path d="M0,0 Q50,0 50,50 Q50,0 100,0" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M0,0 Q0,50 50,50 Q0,50 0,100" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </div>
+        <div class="absolute top-0 right-0 w-24 h-24 z-0 rotate-90">
+            <svg viewBox="0 0 100 100" class="w-full h-full text-amber-400 opacity-30">
+                <path d="M0,0 Q50,0 50,50 Q50,0 100,0" fill="none" stroke="currentColor" stroke-width="2"/>
+                <path d="M0,0 Q0,50 50,50 Q0,50 0,100" fill="none" stroke="currentColor" stroke-width="2"/>
+            </svg>
         </div>
 
         <!-- Floating Elements Container -->
@@ -40,283 +44,300 @@
 
         <!-- Music Toggle Button -->
         <button id="music-toggle" onclick="toggleMusic()" 
-            class="fixed top-4 right-4 z-[100] w-10 h-10 bg-white/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-slate-600 hover:text-blue-500 transition-all hover:scale-110 active:scale-95">
+            class="fixed top-4 right-4 z-[100] w-10 h-10 bg-amber-100/80 backdrop-blur-sm rounded-full shadow-lg flex items-center justify-center text-amber-700 hover:text-amber-900 transition-all hover:scale-110 active:scale-95 border border-amber-200">
             <iconify-icon id="music-icon" icon="lucide:volume-x" width="18"></iconify-icon>
         </button>
 
-        <!-- 1. Intro "Lock Screen" / Unboxing Layer -->
+        <!-- 1. Intro "Lock Screen" / Envelope Layer -->
         <div id="intro-layer"
-            class="absolute inset-0 z-50 bg-gradient-to-br from-white/80 via-blue-50/60 to-pink-50/60 backdrop-blur-xl flex flex-col items-center justify-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            class="absolute inset-0 z-50 bg-gradient-to-br from-amber-50 via-white to-amber-100 flex flex-col items-center justify-center transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)]">
             
             <!-- Animated Stars Background -->
             <div id="stars-container" class="absolute inset-0 pointer-events-none"></div>
             
-            <div class="text-center space-y-8 relative">
-
-                <!-- Floating Icon with Bounce -->
-                <div class="relative w-28 h-28 mx-auto flex items-center justify-center ring-animate animate-bounce-slow">
-                    <div class="absolute inset-0 bg-blue-400/20 rounded-full animate-ping-slow"></div>
-                    <div
-                        class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white shadow-2xl shadow-blue-300 z-10 relative animate-wiggle">
-                        <iconify-icon icon="lucide:gift" width="36" stroke-width="1.5"></iconify-icon>
+            <!-- Decorative Border -->
+            <div class="absolute inset-4 border-2 border-amber-300/50 rounded-lg pointer-events-none"></div>
+            <div class="absolute inset-6 border border-amber-200/30 rounded-lg pointer-events-none"></div>
+            
+            <div class="text-center space-y-6 relative px-8">
+                
+                <!-- Wax Seal Effect -->
+                <div class="relative w-24 h-24 mx-auto">
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-600 via-red-700 to-red-800 rounded-full shadow-xl animate-bounce-slow"></div>
+                    <div class="absolute inset-2 bg-gradient-to-br from-red-500 to-red-700 rounded-full flex items-center justify-center">
+                        <span class="font-script text-white text-3xl">B</span>
                     </div>
                     <!-- Particle Container for Burst -->
                     <div id="particle-container" class="absolute inset-0 pointer-events-none"></div>
                 </div>
 
-                <div class="space-y-3">
-                    <p class="font-serif-accent text-3xl text-slate-800 italic animate-fade-in">For our Family</p>
-                    <p id="typewriter" class="text-xs text-blue-500 uppercase tracking-widest font-medium h-4"></p>
+                <div class="space-y-2">
+                    <p class="font-script text-4xl text-amber-800 animate-fade-in">You're Invited</p>
+                    <p id="typewriter" class="text-xs text-amber-600 uppercase tracking-[0.3em] font-medium h-4"></p>
+                </div>
+                
+                <div class="flex items-center justify-center gap-3">
+                    <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-amber-400"></div>
+                    <iconify-icon icon="lucide:sparkles" width="16" class="text-amber-500"></iconify-icon>
+                    <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-amber-400"></div>
                 </div>
 
-                <!-- Shimmer Effect Button -->
+                <!-- Open Envelope Button -->
                 <button onclick="openInvitation()"
-                    class="group relative px-10 py-4 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white rounded-full font-medium text-sm transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-slate-300 overflow-hidden shimmer-btn">
-                    <span class="relative z-10 flex items-center gap-3">
-                        <iconify-icon icon="lucide:sparkles" width="16" class="animate-pulse"></iconify-icon>
-                        Tap to Open
+                    class="group relative px-10 py-4 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 text-white rounded-full font-medium text-sm transition-all hover:scale-105 active:scale-95 shadow-xl shadow-amber-300/50 overflow-hidden border border-amber-500">
+                    <span class="relative z-10 flex items-center gap-3 font-serif tracking-wide">
+                        <iconify-icon icon="lucide:mail-open" width="18"></iconify-icon>
+                        Open Invitation
                         <iconify-icon icon="lucide:arrow-right" width="16" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
                     </span>
-                    <div class="shimmer-effect"></div>
                 </button>
                 
-                <p class="text-[10px] text-slate-400 animate-pulse">✨ Something special awaits ✨</p>
+                <p class="text-xs text-amber-600/70 italic font-serif">A special celebration awaits...</p>
             </div>
         </div>
 
         <!-- 2. Main Content (Scrollable) -->
         <div id="main-content"
-            class="relative z-10 h-full overflow-y-auto no-scrollbar pt-8 pb-24 px-6 opacity-0 transition-opacity duration-500">
+            class="relative z-10 h-full overflow-y-auto no-scrollbar pt-6 pb-24 px-5 opacity-0 transition-opacity duration-500">
 
-            <!-- Hero Card -->
-            <!-- Hero Card -->
-            <div
-                class="glass-card rounded-[2rem] p-8 mb-6 stagger-item animate-breathe text-center relative overflow-hidden">
-                <!-- Decorative Arc -->
-                <div
-                    class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-blue-200 to-transparent">
+            <!-- Formal Invitation Card -->
+            <div class="invitation-card rounded-2xl p-6 mb-6 stagger-item text-center relative overflow-hidden border border-amber-200 bg-white shadow-lg">
+                
+                <!-- Decorative Top Border -->
+                <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
+                
+                <!-- Corner Flourishes -->
+                <div class="absolute top-3 left-3 text-amber-300 opacity-60">
+                    <iconify-icon icon="mdi:fleur-de-lis" width="20"></iconify-icon>
+                </div>
+                <div class="absolute top-3 right-3 text-amber-300 opacity-60">
+                    <iconify-icon icon="mdi:fleur-de-lis" width="20"></iconify-icon>
                 </div>
 
-                <span
-                    class="inline-block px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-[10px] font-bold tracking-widest uppercase mb-4">Official
-                    Invitation</span>
-
-                <h1 class="text-[2.5rem] leading-[1.1] font-medium text-slate-900 tracking-tight mb-2">
-                    Bhavik<br><span class="text-slate-400">Ahuja</span>
-                </h1>
-
-                <div class="flex items-center justify-center gap-2 mb-6">
-                    <div class="h-[1px] w-8 bg-slate-200"></div>
-                    <iconify-icon icon="lucide:heart" width="14" class="text-red-400 fill-red-50"></iconify-icon>
-                    <div class="h-[1px] w-8 bg-slate-200"></div>
+                <!-- Formal Header -->
+                <div class="mb-4">
+                    <p class="text-xs uppercase tracking-[0.25em] text-amber-600 font-medium mb-2">With Great Joy, We Invite You To</p>
+                    <p class="font-script text-2xl text-amber-700">The Celebration of</p>
                 </div>
 
-                <!-- Circular Photo Frame with soft float -->
-                <div
-                    class="w-40 h-40 mx-auto rounded-full bg-slate-100 mb-6 relative p-1 shadow-inner group cursor-pointer">
+                <!-- Baby Name -->
+                <div class="my-6">
+                    <h1 class="font-serif text-5xl font-medium text-slate-800 tracking-wide leading-tight">
+                        Bhavik
+                    </h1>
+                    <p class="font-serif text-2xl text-amber-600 mt-1">Ahuja</p>
+                </div>
+
+                <!-- Decorative Divider -->
+                <div class="flex items-center justify-center gap-3 my-6">
+                    <div class="h-[1px] w-16 bg-gradient-to-r from-transparent to-amber-300"></div>
+                    <div class="w-3 h-3 rotate-45 border border-amber-400 bg-amber-50"></div>
+                    <div class="h-[1px] w-16 bg-gradient-to-l from-transparent to-amber-300"></div>
+                </div>
+
+                <!-- Circular Photo Frame -->
+                <div class="w-36 h-36 mx-auto rounded-full mb-6 relative p-1 group cursor-pointer border-4 border-amber-200 shadow-lg bg-amber-50">
                     <img src="assets/hero_image.JPG"
                         alt="Baby Bhavik"
-                        class="w-full h-full object-cover rounded-full grayscale group-hover:grayscale-0 transition-all duration-700 ease-out">
-
-                    <div
-                        class="absolute -bottom-2 -right-2 bg-white p-2 rounded-full shadow-md text-blue-500 flex items-center justify-center">
-                        <iconify-icon icon="lucide:sparkles" width="18"></iconify-icon>
-                    </div>
+                        class="w-full h-full object-cover rounded-full">
+                    <!-- Golden Ring -->
+                    <div class="absolute inset-0 rounded-full border-2 border-amber-400/50 animate-pulse"></div>
                 </div>
 
-                <p class="font-serif-accent text-lg text-slate-600 leading-relaxed italic">
-                    "A new adventure begins, and we want our favorite people by our side."
+                <!-- Quote -->
+                <p class="font-serif text-base text-slate-600 leading-relaxed italic px-4 mb-6">
+                    "A new star has arrived in our family, and we wish to celebrate this blessing with you."
                 </p>
                 
                 <!-- Countdown Timer -->
-                <div class="mt-6 pt-6 border-t border-slate-100">
-                    <p class="text-xs font-semibold uppercase tracking-widest mb-3 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent flex items-center justify-center gap-2">
-                        <iconify-icon icon="lucide:clock" width="12" class="text-purple-400"></iconify-icon>
-                        Countdown to the Big Day
-                        <iconify-icon icon="lucide:sparkles" width="12" class="text-pink-400"></iconify-icon>
+                <div class="mt-4 pt-4 border-t border-amber-100">
+                    <p class="text-xs uppercase tracking-[0.2em] text-amber-600 mb-3 flex items-center justify-center gap-2">
+                        <iconify-icon icon="lucide:clock" width="12"></iconify-icon>
+                        Days Until Celebration
                     </p>
-                    <div id="countdown" class="flex justify-center gap-3">
-                        <div class="countdown-item">
-                            <span id="days" class="text-2xl font-bold text-blue-600">00</span>
-                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">Days</span>
+                    <div id="countdown" class="flex justify-center gap-2">
+                        <div class="countdown-box">
+                            <span id="days" class="text-xl font-serif font-semibold text-slate-800">00</span>
+                            <span class="text-[9px] uppercase tracking-wider text-amber-600">Days</span>
                         </div>
-                        <span class="text-2xl text-slate-300">:</span>
-                        <div class="countdown-item">
-                            <span id="hours" class="text-2xl font-bold text-indigo-600">00</span>
-                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-indigo-400 to-indigo-600 bg-clip-text text-transparent">Hours</span>
+                        <span class="text-xl text-amber-300 self-start mt-1">:</span>
+                        <div class="countdown-box">
+                            <span id="hours" class="text-xl font-serif font-semibold text-slate-800">00</span>
+                            <span class="text-[9px] uppercase tracking-wider text-amber-600">Hours</span>
                         </div>
-                        <span class="text-2xl text-slate-300">:</span>
-                        <div class="countdown-item">
-                            <span id="minutes" class="text-2xl font-bold text-purple-600">00</span>
-                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">Mins</span>
+                        <span class="text-xl text-amber-300 self-start mt-1">:</span>
+                        <div class="countdown-box">
+                            <span id="minutes" class="text-xl font-serif font-semibold text-slate-800">00</span>
+                            <span class="text-[9px] uppercase tracking-wider text-amber-600">Mins</span>
                         </div>
-                        <span class="text-2xl text-slate-300">:</span>
-                        <div class="countdown-item">
-                            <span id="seconds" class="text-2xl font-bold text-pink-600 animate-pulse">00</span>
-                            <span class="text-[10px] font-medium uppercase bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent">Secs</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Interactive Timeline -->
-            <div class="mb-8 stagger-item" style="transition-delay: 100ms;">
-                <div class="flex items-center justify-between mb-4 px-2">
-                    <h2 class="text-lg font-medium text-slate-800 tracking-tight">The Big Day</h2>
-                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex items-center gap-1 shadow-sm">
-                        <iconify-icon icon="lucide:calendar" width="10"></iconify-icon>
-                        Jan 7, 2026
-                    </span>
-                </div>
-
-                <div class="bg-white rounded-[1.5rem] p-1 shadow-sm border border-slate-100 animate-breathe">
-                    <!-- Location Map Placeholder -->
-                    <a href="https://maps.app.goo.gl/WirjHk8rjJc4NwQw9" target="_blank" rel="noopener noreferrer" class="block h-32 w-full bg-slate-50 rounded-2xl mb-4 overflow-hidden relative group cursor-pointer hover:shadow-md transition-shadow">
-                        <div
-                            class="absolute inset-0 flex items-center justify-center opacity-10 bg-[url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg')] bg-cover bg-center">
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-center flex-col gap-2">
-                            <div class="bg-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 group-hover:bg-blue-50 group-hover:scale-105 transition-all">
-                                <iconify-icon icon="lucide:map-pin" class="text-blue-500 group-hover:animate-bounce" width="16"></iconify-icon>
-                                <span class="text-xs font-medium text-slate-700">The Malhi Farm</span>
-                                <iconify-icon icon="lucide:external-link" class="text-slate-400" width="12"></iconify-icon>
-                            </div>
-                            <span class="text-[10px] text-blue-500 font-medium flex items-center gap-1">
-                                <iconify-icon icon="lucide:hand-pointer" width="10"></iconify-icon>
-                                Tap to open in Maps
-                            </span>
-                        </div>
-                        
-                    </a>
-
-                    <!-- Details Grid -->
-                    <div class="grid grid-cols-2 gap-1">
-                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 text-center border border-blue-100">
-                            <iconify-icon icon="lucide:calendar-clock" class="text-blue-500 mb-2"
-                                width="20"></iconify-icon>
-                            <p class="text-sm font-medium text-slate-800">Wednesday</p>
-                            <p class="text-xs font-semibold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">8:00 PM</p>
-                        </div>
-                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 text-center border border-purple-100">
-                            <iconify-icon icon="lucide:party-popper" class="text-purple-500 mb-2"
-                                width="20"></iconify-icon>
-                            <p class="text-sm font-medium text-slate-800">Indian</p>
-                            <p class="text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Dress Code ✨</p>
+                        <span class="text-xl text-amber-300 self-start mt-1">:</span>
+                        <div class="countdown-box">
+                            <span id="seconds" class="text-xl font-serif font-semibold text-slate-800">00</span>
+                            <span class="text-[9px] uppercase tracking-wider text-amber-600">Secs</span>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Family Photo Montage -->
-            <div class="mb-8 stagger-item" style="transition-delay: 150ms;">
-                <div class="flex items-center justify-between mb-4 px-2">
-                    <h2 class="text-lg font-medium text-slate-800 tracking-tight">Our Little Star</h2>
-                    <div class="flex items-center gap-2">
-                        <iconify-icon icon="lucide:images" width="16" class="text-blue-400"></iconify-icon>
-                        <iconify-icon icon="lucide:heart" width="16" class="text-red-400"></iconify-icon>
+            <!-- Event Details Card -->
+            <div class="invitation-card rounded-2xl p-6 mb-6 stagger-item border border-amber-200 bg-white shadow-lg" style="transition-delay: 100ms;">
+                
+                <div class="text-center mb-5">
+                    <p class="font-script text-2xl text-amber-700 mb-1">Event Details</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <div class="h-[1px] w-10 bg-amber-200"></div>
+                        <iconify-icon icon="lucide:calendar-heart" width="16" class="text-amber-500"></iconify-icon>
+                        <div class="h-[1px] w-10 bg-amber-200"></div>
                     </div>
                 </div>
 
-                <div class="glass-card rounded-[2rem] p-4 animate-breathe">
-                    <!-- Image Montage Slideshow -->
-                    <div id="montage-container" class="relative w-full rounded-2xl overflow-hidden cursor-pointer" style="height: 350px; background-color: #f1f5f9;">
-                        <!-- Images with Static Captions -->
-                        <div class="montage-slide active">
-                            <img src="assets/mom&dad.jpeg" alt="Mom & Dad" class="montage-img">
-                            <div class="montage-label">Mom & Dad</div>
-                        </div>
-                        <div class="montage-slide">
-                            <img src="assets/image1.jpeg" alt="Tiny Smiles" class="montage-img">
-                            <div class="montage-label">Tiny Smiles</div>
-                        </div>
-                        <div class="montage-slide">
-                            <img src="assets/image2.JPG" alt="Bundle of Joy" class="montage-img">
-                            <div class="montage-label">Bundle of Joy</div>
-                        </div>
-                        <div class="montage-slide">
-                            <img src="assets/image3.jpeg" alt="Precious Moments" class="montage-img">
-                            <div class="montage-label">Precious Moments</div>
-                        </div>
-                        <div class="montage-slide">
-                            <img src="assets/image4.jpeg" alt="Little Angel" class="montage-img">
-                            <div class="montage-label">Little Angel</div>
-                        </div>
-                        
-                        <!-- Gradient Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
-                        
-                        <!-- Progress Indicators -->
-                        <div class="absolute top-4 left-4 right-4 flex gap-1">
-                            <div class="montage-indicator active" data-index="0"></div>
-                            <div class="montage-indicator" data-index="1"></div>
-                            <div class="montage-indicator" data-index="2"></div>
-                            <div class="montage-indicator" data-index="3"></div>
-                            <div class="montage-indicator" data-index="4"></div>
-                        </div>
-                        
-                        <!-- Navigation Arrows -->
-                        <button onclick="prevSlide(event)" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:scale-110 transition-all opacity-0 group-hover:opacity-100 montage-nav">
-                            <iconify-icon icon="lucide:chevron-left" width="18"></iconify-icon>
-                        </button>
-                        <button onclick="nextSlide(event)" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-600 hover:bg-white hover:scale-110 transition-all opacity-0 group-hover:opacity-100 montage-nav">
-                            <iconify-icon icon="lucide:chevron-right" width="18"></iconify-icon>
-                        </button>
+                <!-- Date & Time -->
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-5 mb-4 border border-amber-100 text-center">
+                    <p class="text-xs uppercase tracking-[0.2em] text-amber-600 mb-2">Save The Date</p>
+                    <p class="font-serif text-3xl text-slate-800 font-medium">January 7, 2026</p>
+                    <p class="text-amber-700 font-medium mt-1">Wednesday • 8:00 PM Onwards</p>
+                </div>
+
+                <!-- Venue -->
+                <a href="https://maps.app.goo.gl/WirjHk8rjJc4NwQw9" target="_blank" rel="noopener noreferrer" 
+                   class="block bg-gradient-to-br from-slate-50 to-amber-50 rounded-xl p-5 mb-4 border border-amber-100 text-center group hover:shadow-md transition-all">
+                    <p class="text-xs uppercase tracking-[0.2em] text-amber-600 mb-2">Venue</p>
+                    <div class="flex items-center justify-center gap-2 mb-2">
+                        <iconify-icon icon="lucide:map-pin" class="text-amber-600" width="20"></iconify-icon>
+                        <p class="font-serif text-xl text-slate-800">The Malhi Farm</p>
+                    </div>
+                    <p class="text-xs text-amber-600 flex items-center justify-center gap-1 group-hover:text-amber-700">
+                        <iconify-icon icon="lucide:navigation" width="12"></iconify-icon>
+                        Tap to get directions
+                        <iconify-icon icon="lucide:external-link" width="12"></iconify-icon>
+                    </p>
+                </a>
+
+                <!-- Dress Code -->
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-4 border border-purple-100 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                        <iconify-icon icon="lucide:shirt" class="text-purple-500" width="18"></iconify-icon>
+                        <p class="text-sm font-medium text-slate-700">Dress Code: <span class="text-purple-600 font-semibold">Indian Attire</span></p>
                     </div>
                 </div>
             </div>
 
-            <!-- RSVP Slider Action -->
-            <div class="stagger-item" style="transition-delay: 300ms;">
-                <div id="rsvp-card"
-                    class="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-900 rounded-3xl p-6 text-white text-center shadow-2xl shadow-slate-400/30 relative overflow-hidden animate-breathe">
+            <!-- Photo Gallery -->
+            <div class="invitation-card rounded-2xl p-5 mb-6 stagger-item border border-amber-200 bg-white shadow-lg" style="transition-delay: 150ms;">
+                <div class="text-center mb-4">
+                    <p class="font-script text-2xl text-amber-700 mb-1">Precious Moments</p>
+                    <div class="flex items-center justify-center gap-2">
+                        <div class="h-[1px] w-10 bg-amber-200"></div>
+                        <iconify-icon icon="lucide:camera" width="16" class="text-amber-500"></iconify-icon>
+                        <div class="h-[1px] w-10 bg-amber-200"></div>
+                    </div>
+                </div>
+
+                <!-- Image Montage Slideshow -->
+                <div id="montage-container" class="relative w-full rounded-xl overflow-hidden cursor-pointer border border-amber-100" style="height: 320px; background-color: #fffbeb;">
+                    <!-- Images with Static Captions -->
+                    <div class="montage-slide active">
+                        <img src="assets/mom&dad.jpeg" alt="Mom & Dad" class="montage-img">
+                        <div class="montage-label">Mom & Dad</div>
+                    </div>
+                    <div class="montage-slide">
+                        <img src="assets/image1.jpeg" alt="Tiny Smiles" class="montage-img">
+                        <div class="montage-label">Tiny Smiles</div>
+                    </div>
+                    <div class="montage-slide">
+                        <img src="assets/image2.JPG" alt="Bundle of Joy" class="montage-img">
+                        <div class="montage-label">Bundle of Joy</div>
+                    </div>
+                    <div class="montage-slide">
+                        <img src="assets/image3.jpeg" alt="Precious Moments" class="montage-img">
+                        <div class="montage-label">Precious Moments</div>
+                    </div>
+                    <div class="montage-slide">
+                        <img src="assets/image4.jpeg" alt="Little Angel" class="montage-img">
+                        <div class="montage-label">Little Angel</div>
+                    </div>
                     
-                    <!-- Animated Background Orbs -->
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-30 animate-float"></div>
-                    <div class="absolute bottom-0 left-0 w-24 h-24 bg-purple-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-float-delayed"></div>
+                    <!-- Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
                     
-                    <!-- Confetti Container -->
-                    <div id="rsvp-confetti" class="absolute inset-0 pointer-events-none"></div>
-
-                    <iconify-icon icon="lucide:party-popper" width="32" class="text-yellow-400 mb-3 animate-bounce"></iconify-icon>
-                    <h3 class="text-xl font-medium mb-1">Are you coming?</h3>
-
-                    <!-- Swipe/Toggle Interaction -->
-                    <div class="relative bg-slate-800 h-14 rounded-full p-1 flex items-center cursor-pointer group select-none overflow-hidden"
-                        onclick="toggleRsvp(this)">
-                        <div id="rsvp-fill"
-                            class="absolute inset-0 bg-green-500 origin-left transform scale-x-0 transition-transform duration-500 ease-out">
-                        </div>
-                        <div id="rsvp-btn"
-                            class="absolute left-1 w-12 h-12 bg-blue-500 rounded-full shadow-lg flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-10">
-                            <iconify-icon icon="lucide:check" width="20" class="text-white opacity-0 transition-opacity absolute"
-                                id="rsvp-check"></iconify-icon>
-                            <iconify-icon icon="lucide:chevron-right" width="20"
-                                class="text-white opacity-100 transition-opacity absolute" id="rsvp-arrow"></iconify-icon>
-                        </div>
-                        <span id="rsvp-text"
-                            class="relative z-10 w-full text-center text-sm font-medium text-slate-300 ml-8 transition-opacity duration-300">Tap
-                            to confirm</span>
+                    <!-- Progress Indicators -->
+                    <div class="absolute top-3 left-3 right-3 flex gap-1">
+                        <div class="montage-indicator active" data-index="0"></div>
+                        <div class="montage-indicator" data-index="1"></div>
+                        <div class="montage-indicator" data-index="2"></div>
+                        <div class="montage-indicator" data-index="3"></div>
+                        <div class="montage-indicator" data-index="4"></div>
                     </div>
+                    
+                    <!-- Navigation Arrows -->
+                    <button onclick="prevSlide(event)" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-amber-700 hover:bg-white hover:scale-110 transition-all montage-nav shadow-md">
+                        <iconify-icon icon="lucide:chevron-left" width="18"></iconify-icon>
+                    </button>
+                    <button onclick="nextSlide(event)" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/90 rounded-full flex items-center justify-center text-amber-700 hover:bg-white hover:scale-110 transition-all montage-nav shadow-md">
+                        <iconify-icon icon="lucide:chevron-right" width="18"></iconify-icon>
+                    </button>
                 </div>
+            </div>
+
+            <!-- RSVP Card -->
+            <div class="invitation-card rounded-2xl p-6 mb-6 stagger-item border border-amber-200 bg-gradient-to-br from-amber-700 via-amber-600 to-amber-800 text-white shadow-xl" style="transition-delay: 200ms;">
+                
+                <div class="text-center mb-4">
+                    <iconify-icon icon="lucide:mail-check" width="32" class="text-amber-200 mb-2"></iconify-icon>
+                    <p class="font-script text-2xl text-white">Kindly Respond</p>
+                    <p class="text-xs text-amber-200 mt-1">We would be honored by your presence</p>
+                </div>
+
+                <!-- RSVP Button -->
+                <div class="relative bg-amber-900/50 h-14 rounded-full p-1 flex items-center cursor-pointer group select-none overflow-hidden border border-amber-500/30"
+                    onclick="toggleRsvp(this)">
+                    <div id="rsvp-fill"
+                        class="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 origin-left transform scale-x-0 transition-transform duration-500 ease-out rounded-full">
+                    </div>
+                    <div id="rsvp-btn"
+                        class="absolute left-1 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-10">
+                        <iconify-icon icon="lucide:check" width="20" class="text-green-600 opacity-0 transition-opacity absolute"
+                            id="rsvp-check"></iconify-icon>
+                        <iconify-icon icon="lucide:chevron-right" width="20"
+                            class="text-amber-600 opacity-100 transition-opacity absolute" id="rsvp-arrow"></iconify-icon>
+                    </div>
+                    <span id="rsvp-text"
+                        class="relative z-10 w-full text-center text-sm font-medium text-amber-100 ml-8 transition-opacity duration-300">Slide to Accept Invitation</span>
+                </div>
+                
+                <!-- Confetti Container -->
+                <div id="rsvp-confetti" class="absolute inset-0 pointer-events-none"></div>
+            </div>
+
+            <!-- Hosts Section -->
+            <div class="invitation-card rounded-2xl p-6 mb-6 stagger-item border border-amber-200 bg-white shadow-lg text-center" style="transition-delay: 250ms;">
+                <p class="text-xs uppercase tracking-[0.2em] text-amber-600 mb-3">Hosted By</p>
+                <p class="font-serif text-xl text-slate-800 mb-1">The Ahuja Family</p>
+                <div class="flex items-center justify-center gap-2 my-3">
+                    <div class="h-[1px] w-8 bg-amber-200"></div>
+                    <iconify-icon icon="lucide:heart" width="14" class="text-red-400"></iconify-icon>
+                    <div class="h-[1px] w-8 bg-amber-200"></div>
+                </div>
+                <p class="font-serif text-sm text-slate-600 italic">"Your presence is the greatest gift"</p>
             </div>
 
             <!-- Footer -->
-            <div class="mt-12 text-center stagger-item" style="transition-delay: 400ms;">
-                <div class="flex justify-center gap-1 mb-3">
-                    <iconify-icon icon="lucide:heart" width="16" class="text-red-400 animate-heartbeat"></iconify-icon>
-                    <iconify-icon icon="lucide:heart" width="20" class="text-pink-400 animate-heartbeat" style="animation-delay: 0.2s"></iconify-icon>
-                    <iconify-icon icon="lucide:heart" width="16" class="text-red-400 animate-heartbeat" style="animation-delay: 0.4s"></iconify-icon>
+            <div class="text-center stagger-item pb-8" style="transition-delay: 300ms;">
+                <div class="flex items-center justify-center gap-2 mb-3">
+                    <div class="h-[1px] w-12 bg-gradient-to-r from-transparent to-amber-300"></div>
+                    <iconify-icon icon="mdi:fleur-de-lis" width="20" class="text-amber-400"></iconify-icon>
+                    <div class="h-[1px] w-12 bg-gradient-to-l from-transparent to-amber-300"></div>
                 </div>
-                <iconify-icon icon="lucide:infinity" width="24" class="text-slate-300 mb-2 animate-spin-slow"></iconify-icon>
-                <p class="text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">With love, The Ahujas</p>
-                <p class="text-[10px] text-slate-400 mt-2 flex items-center justify-center gap-1">
-                    Made with <iconify-icon icon="lucide:heart" width="10" class="text-red-400 animate-heartbeat"></iconify-icon> for Bhavik
+                <p class="font-script text-xl text-amber-700 mb-1">With Love & Blessings</p>
+                <p class="text-xs text-amber-600 tracking-wide">The Ahuja Family</p>
+                <p class="text-[10px] text-slate-400 mt-4 flex items-center justify-center gap-1">
+                    Made with <iconify-icon icon="lucide:heart" width="10" class="text-red-400"></iconify-icon> for Baby Bhavik
                 </p>
             </div>
             
             <!-- Scroll to Top Button -->
             <button id="scroll-top" onclick="scrollToTop()" 
-                class="fixed bottom-6 right-6 w-12 h-12 bg-blue-500 text-white rounded-full shadow-lg opacity-0 pointer-events-none transition-all hover:scale-110 hover:bg-blue-600 flex items-center justify-center z-50">
+                class="fixed bottom-6 right-6 w-12 h-12 bg-amber-600 text-white rounded-full shadow-lg opacity-0 pointer-events-none transition-all hover:scale-110 hover:bg-amber-700 flex items-center justify-center z-50 border border-amber-500">
                 <iconify-icon icon="lucide:chevron-up" width="24"></iconify-icon>
             </button>
 

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ============ TYPEWRITER EFFECT ============
 function initTypewriter() {
-    const text = "YOU HAVE A SPECIAL INVITATION ✨";
+    const text = "A CELEBRATION OF JOY & BLESSINGS";
     const element = document.getElementById('typewriter');
     let index = 0;
     
@@ -18,13 +18,13 @@ function initTypewriter() {
         if (index < text.length) {
             element.innerHTML = text.substring(0, index + 1) + '<span class="typewriter-cursor"></span>';
             index++;
-            setTimeout(type, 100);
+            setTimeout(type, 80);
         } else {
             // Reset after a pause
             setTimeout(() => {
                 index = 0;
                 type();
-            }, 3000);
+            }, 4000);
         }
     }
     type();
@@ -33,16 +33,16 @@ function initTypewriter() {
 // ============ STARS BACKGROUND ============
 function initStars() {
     const container = document.getElementById('stars-container');
-    const starIcons = ['✦', '✧', '★', '☆', '✴', '✵'];
-    const colors = ['#60A5FA', '#F472B6', '#FBBF24', '#A78BFA', '#34D399'];
+    const starIcons = ['✦', '✧', '★', '·', '✴'];
+    const colors = ['#d97706', '#f59e0b', '#fbbf24', '#fcd34d', '#b45309'];
     
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 15; i++) {
         const star = document.createElement('span');
         star.className = 'star animate-twinkle';
         star.textContent = starIcons[Math.floor(Math.random() * starIcons.length)];
         star.style.left = Math.random() * 100 + '%';
         star.style.top = Math.random() * 100 + '%';
-        star.style.fontSize = (Math.random() * 10 + 8) + 'px';
+        star.style.fontSize = (Math.random() * 8 + 6) + 'px';
         star.style.color = colors[Math.floor(Math.random() * colors.length)];
         star.style.animationDelay = Math.random() * 2 + 's';
         star.style.animationDuration = (Math.random() * 2 + 1) + 's';
@@ -53,27 +53,28 @@ function initStars() {
 // ============ FLOATING ELEMENTS ============
 function initFloatingElements() {
     const container = document.getElementById('floating-elements');
-    const elements = ['💕', '✨', '🎀', '⭐', '💫', '🌸', '🎈', '💝', '🦋', '🌟', '💖', '🎉', '🍼', '👶', '🧸'];
+    const elements = ['✨', '⭐', '💫', '🌟', '✦', '·', '♥'];
     
     setInterval(() => {
         if (document.getElementById('intro-layer').style.opacity === '0') {
             // Create multiple elements at once
-            for (let i = 0; i < 3; i++) {
+            for (let i = 0; i < 2; i++) {
                 setTimeout(() => {
                     const el = document.createElement('span');
                     el.className = 'floating-element';
                     el.textContent = elements[Math.floor(Math.random() * elements.length)];
                     el.style.left = Math.random() * 100 + '%';
-                    el.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                    el.style.fontSize = (Math.random() * 14 + 10) + 'px';
                     el.style.animationDuration = (Math.random() * 8 + 8) + 's';
+                    el.style.color = '#d97706';
                     container.appendChild(el);
                     
                     // Remove after animation
                     setTimeout(() => el.remove(), 16000);
-                }, i * 200);
+                }, i * 300);
             }
         }
-    }, 800);
+    }, 1200);
 }
 
 // ============ COUNTDOWN TIMER ============
@@ -302,17 +303,17 @@ function toggleRsvp(element) {
 // ============ RSVP CONFETTI ============
 function createRsvpConfetti() {
     const container = document.getElementById('rsvp-confetti');
-    const colors = ['#22c55e', '#4ade80', '#86efac', '#FBBF24', '#F472B6'];
-    const emojis = ['🎉', '🎊', '✨', '💫', '⭐'];
+    const colors = ['#22c55e', '#4ade80', '#fbbf24', '#f59e0b', '#d97706'];
+    const emojis = ['🎉', '✨', '💫', '⭐', '♥'];
     
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 25; i++) {
         setTimeout(() => {
             const confetti = document.createElement('span');
             confetti.textContent = Math.random() > 0.5 ? emojis[Math.floor(Math.random() * emojis.length)] : '';
             confetti.style.position = 'absolute';
             confetti.style.left = Math.random() * 100 + '%';
             confetti.style.top = '50%';
-            confetti.style.fontSize = (Math.random() * 15 + 10) + 'px';
+            confetti.style.fontSize = (Math.random() * 12 + 8) + 'px';
             confetti.style.pointerEvents = 'none';
             confetti.style.animation = `confetti-fall ${Math.random() * 1 + 1}s ease-out forwards`;
             container.appendChild(confetti);
